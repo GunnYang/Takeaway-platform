@@ -1,34 +1,48 @@
-# vue-practice
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+####0-8
 
-### Compiles and minifies for production
-```
-npm run build
-```
+####09
 
-### Run your tests
-```
-npm run test
-```
+学习footer的下面四个导航，实现点击功能, 
+问题：无法把reset.css文件引入到index.js中
 
-### Lints and fixes files
-```
-npm run lint
-```
+####10
 
-### Run your unit tests
-```
-npm run test:unit
-```
+实现静态的四个页面
+了解了flex布局
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+####11
+
+实现一个HeadTop的组件
+
+####12
+
+实现首页的轮播图
+
+####13
+
+实现首页下面list的组件
+
+####14
+
+Login登录页面，以及跳转和底部footer的显示
+学习display:flex的布局！！！
+
+####15
+
+后台的postman测试接口(未完成)
+没有下载postman
+
+####16
+
+ajax的请求模块
+
+
+####17
+
+根据接口文档写接口请求函数
+
+####18
+
+git版本控制，把文件初始化到仓库中，然后pull
