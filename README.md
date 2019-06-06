@@ -134,7 +134,7 @@ star组件,
 ajax请求mock
 shopHeader组件
 
-# 52-67
+#### 52-67
 异步显示goods数据
 滑动效果分析
 简单实现滑动(better-scroll插件)
@@ -145,7 +145,7 @@ CartControl组件
 Food组件
 ShopCart组件+显示购物车列表
 
-# 69-77
+#### 69-77
 购物车动画效果
 购物车列表的滑动效果+修复小bug(滑动的时候必须点第二次才滑动)
 ShopRatings组件(学习过滤逻辑)
