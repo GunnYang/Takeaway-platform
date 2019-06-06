@@ -7,7 +7,17 @@
 
 <script>
 import FooterGudie from './components/FooterGudie/FooterGudie.vue'
+import {mapActions} from 'vuex'
 export default {
+
+    mounted(){
+       // this.$store.dispatch('getAdderss')
+        this.getAdderss()
+        this.getUserInfo()
+    },
+    methods:{
+        ...mapActions(['getAdderss','getUserInfo'])
+    },
     components:{
         FooterGudie
     }

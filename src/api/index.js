@@ -3,14 +3,14 @@
  *  */
 
 import ajax from './ajax'
-// const BASE_URL = 'http://local:4000'
-const BASE_URL = './api'
+//  const BASE_URL = 'http://localhost:4000'
+const BASE_URL = '/api'
 
 /**
  * 获取地址信息(根据经纬度串)
  * 这个接口的经纬度参数是在url路径里的，没有query参数
  */
-export const reqAddress = geohash => ajax (`${BASE_URL}/position/${geohash}`)
+export const reqAddress = geohash => ajax(`${BASE_URL}/position/${geohash}`)
 /**
  * 获取 msite 页面食品分类列表
  */
@@ -45,6 +45,7 @@ export const reqUserInfo = () => ajax(BASE_URL + '/userinfo')
  * 请求登出
  */
 export const reqLogout = () => ajax(BASE_URL + '/logout')
+
 /**
  * 获取商家信息(下列请求由mock拦截并返回 不需要代理)
  */

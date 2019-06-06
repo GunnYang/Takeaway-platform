@@ -1,353 +1,74 @@
 <template>
     <div class="shop_container">
-        <ul class="shop_list">
+        <ul class="shop_list" v-if="shops.length">
             <!-- 每一件商品 -->
-            <li class="shop_li border-1px">
+            <li class="shop_li border-1px" v-for="(shop,index) in shops" :key="index" @click="$router.push('/shop')">
                 <a>
                     <div class="shop_left">
-                        <img class="shop_img" src="./images/bread.jpg">
+                        <img class="shop_img" :src="baseImgUrl+shop.image_path">
                     </div>
                     <div class="shop_right">
                         <!-- 食物的名字和标签 -->
                         <section class="shop_detail_header">
-                            <h4 class="shop_title ellipsis">食物的列表</h4>
+                            <h4 class="shop_title ellipsis">{{shop.name}}</h4>
                             <ul class="shop_detail_ul">
-                                <li class="supports">
-                                    快
-                                </li>
-                                <li class="supports">
-                                    准
+                                <li class="supports" v-for="(support,index) in shop.supports" :key="index">
+                                    {{support.icon_name}}
                                 </li>
                             </ul>
                         </section>
                         <!-- 评分和月售单数 -->
                         <section class="shop_rating_order">
                             <section class="shop_rating_order_left">
-                                <Star  :size="24"></Star>
+                                <Star :score="shop.rating" :size="24"></Star>
                                 <div class="rating_section">
-                                    4.1
+                                    {{shop.rating}}
                                 </div>
                                 <div class="order_section">
-                                    月售106单
+                                    月售{{shop.recent_order_num}}单
                                 </div>
                             </section>
                             <!-- 派送 -->
                             <section class="shop_rating_order_right">
-                                <span class="delivery_style delivery_right">美团外送</span>
+                                <span class="delivery_style delivery_right">{{shop.delivery_mode.text}}</span>
                             </section>
                         </section>
                         <!-- 配送费约¥3和配送起步价格 -->
                         <section class="shop_distance">
                             <p class="shop_delivery_msg">
-                                <span>¥20起送</span>
+                                <span>¥{{shop.float_minimum_order_amount}}起送</span>
                                 <span class="segmentation">/</span>
-                                <span>配送费约¥3</span>
-                            </p>
-                        </section>
-                    </div>
-                </a>
-                <a>
-                    <div class="shop_left">
-                        <img class="shop_img" src="./images/fish.jpg">
-                    </div>
-                    <div class="shop_right">
-                        <!-- 食物的名字和标签 -->
-                        <section class="shop_detail_header">
-                            <h4 class="shop_title ellipsis">食物的列表</h4>
-                            <ul class="shop_detail_ul">
-                                <li class="supports">
-                                    快
-                                </li>
-                                <li class="supports">
-                                    准
-                                </li>
-                            </ul>
-                        </section>
-                        <!-- 评分和月售单数 -->
-                        <section class="shop_rating_order">
-                            <section class="shop_rating_order_left">
-                                <Star  :size="24"></Star>
-                                <div class="rating_section">
-                                    4.1
-                                </div>
-                                <div class="order_section">
-                                    月售106单
-                                </div>
-                            </section>
-                            <section class="shop_rating_order_right">
-                                <span class="delivery_style delivery_right">美团外送</span>
-                            </section>
-                        </section>
-                        <!-- 配送费约¥3和配送起步价格 -->
-                        <section class="shop_distance">
-                            <p class="shop_delivery_msg">
-                                <span>¥20起送</span>
-                                <span class="segmentation">/</span>
-                                <span>配送费约¥3</span>
-                            </p>
-                        </section>
-                    </div>
-                </a>
-                <a>
-                    <div class="shop_left">
-                        <img class="shop_img" src="./images/meat.jpg">
-                    </div>
-                    <div class="shop_right">
-                        <!-- 食物的名字和标签 -->
-                        <section class="shop_detail_header">
-                            <h4 class="shop_title ellipsis">食物的列表</h4>
-                            <ul class="shop_detail_ul">
-                                <li class="supports">
-                                    快
-                                </li>
-                                <li class="supports">
-                                    准
-                                </li>
-                            </ul>
-                        </section>
-                        <!-- 评分和月售单数 -->
-                        <section class="shop_rating_order">
-                            <section class="shop_rating_order_left">
-                                <Star  :size="24"></Star>
-                                <div class="rating_section">
-                                    4.1
-                                </div>
-                                <div class="order_section">
-                                    月售106单
-                                </div>
-                            </section>
-                            <section class="shop_rating_order_right">
-                                <span class="delivery_style delivery_right">美团外送</span>
-                            </section>
-                        </section>
-                        <!-- 配送费约¥3和配送起步价格 -->
-                        <section class="shop_distance">
-                            <p class="shop_delivery_msg">
-                                <span>¥20起送</span>
-                                <span class="segmentation">/</span>
-                                <span>配送费约¥3</span>
-                            </p>
-                        </section>
-                    </div>
-                </a>
-                <a>
-                    <div class="shop_left">
-                        <img class="shop_img" src="./images/rice.jpg">
-                    </div>
-                    <div class="shop_right">
-                        <!-- 食物的名字和标签 -->
-                        <section class="shop_detail_header">
-                            <h4 class="shop_title ellipsis">食物的列表</h4>
-                            <ul class="shop_detail_ul">
-                                <li class="supports">
-                                    快
-                                </li>
-                                <li class="supports">
-                                    准
-                                </li>
-                            </ul>
-                        </section>
-                        <!-- 评分和月售单数 -->
-                        <section class="shop_rating_order">
-                            <section class="shop_rating_order_left">
-                                <Star  :size="24"></Star>
-                                <div class="rating_section">
-                                    4.1
-                                </div>
-                                <div class="order_section">
-                                    月售106单
-                                </div>
-                            </section>
-                            <section class="shop_rating_order_right">
-                                <span class="delivery_style delivery_right">美团外送</span>
-                            </section>
-                        </section>
-                        <!-- 配送费约¥3和配送起步价格 -->
-                        <section class="shop_distance">
-                            <p class="shop_delivery_msg">
-                                <span>¥20起送</span>
-                                <span class="segmentation">/</span>
-                                <span>配送费约¥3</span>
-                            </p>
-                        </section>
-                    </div>
-                </a>
-                <a>
-                    <div class="shop_left">
-                        <img class="shop_img" src="./images/bread.jpg">
-                    </div>
-                    <div class="shop_right">
-                        <!-- 食物的名字和标签 -->
-                        <section class="shop_detail_header">
-                            <h4 class="shop_title ellipsis">食物的列表</h4>
-                            <ul class="shop_detail_ul">
-                                <li class="supports">
-                                    快
-                                </li>
-                                <li class="supports">
-                                    准
-                                </li>
-                            </ul>
-                        </section>
-                        <!-- 评分和月售单数 -->
-                        <section class="shop_rating_order">
-                            <section class="shop_rating_order_left">
-                                <Star  :size="24"></Star>
-                                <div class="rating_section">
-                                    4.1
-                                </div>
-                                <div class="order_section">
-                                    月售106单
-                                </div>
-                            </section>
-                            <section class="shop_rating_order_right">
-                                <span class="delivery_style delivery_right">美团外送</span>
-                            </section>
-                        </section>
-                        <!-- 配送费约¥3和配送起步价格 -->
-                        <section class="shop_distance">
-                            <p class="shop_delivery_msg">
-                                <span>¥20起送</span>
-                                <span class="segmentation">/</span>
-                                <span>配送费约¥3</span>
-                            </p>
-                        </section>
-                    </div>
-                </a>
-                <a>
-                    <div class="shop_left">
-                        <img class="shop_img" src="./images/fish.jpg">
-                    </div>
-                    <div class="shop_right">
-                        <!-- 食物的名字和标签 -->
-                        <section class="shop_detail_header">
-                            <h4 class="shop_title ellipsis">食物的列表</h4>
-                            <ul class="shop_detail_ul">
-                                <li class="supports">
-                                    快
-                                </li>
-                                <li class="supports">
-                                    准
-                                </li>
-                            </ul>
-                        </section>
-                        <!-- 评分和月售单数 -->
-                        <section class="shop_rating_order">
-                            <section class="shop_rating_order_left">
-                                <Star  :size="24"></Star>
-                                <div class="rating_section">
-                                    4.1
-                                </div>
-                                <div class="order_section">
-                                    月售106单
-                                </div>
-                            </section>
-                            <section class="shop_rating_order_right">
-                                <span class="delivery_style delivery_right">美团外送</span>
-                            </section>
-                        </section>
-                        <!-- 配送费约¥3和配送起步价格 -->
-                        <section class="shop_distance">
-                            <p class="shop_delivery_msg">
-                                <span>¥20起送</span>
-                                <span class="segmentation">/</span>
-                                <span>配送费约¥3</span>
-                            </p>
-                        </section>
-                    </div>
-                </a>
-                <a>
-                    <div class="shop_left">
-                        <img class="shop_img" src="./images/meat.jpg">
-                    </div>
-                    <div class="shop_right">
-                        <!-- 食物的名字和标签 -->
-                        <section class="shop_detail_header">
-                            <h4 class="shop_title ellipsis">食物的列表</h4>
-                            <ul class="shop_detail_ul">
-                                <li class="supports">
-                                    快
-                                </li>
-                                <li class="supports">
-                                    准
-                                </li>
-                            </ul>
-                        </section>
-                        <!-- 评分和月售单数 -->
-                        <section class="shop_rating_order">
-                            <section class="shop_rating_order_left">
-                                <Star  :size="24"></Star>
-                                <div class="rating_section">
-                                    4.1
-                                </div>
-                                <div class="order_section">
-                                    月售106单
-                                </div>
-                            </section>
-                            <section class="shop_rating_order_right">
-                                <span class="delivery_style delivery_right">美团外送</span>
-                            </section>
-                        </section>
-                        <!-- 配送费约¥3和配送起步价格 -->
-                        <section class="shop_distance">
-                            <p class="shop_delivery_msg">
-                                <span>¥20起送</span>
-                                <span class="segmentation">/</span>
-                                <span>配送费约¥3</span>
-                            </p>
-                        </section>
-                    </div>
-                </a>
-                <a>
-                    <div class="shop_left">
-                        <img class="shop_img" src="./images/rice.jpg">
-                    </div>
-                    <div class="shop_right">
-                        <!-- 食物的名字和标签 -->
-                        <section class="shop_detail_header">
-                            <h4 class="shop_title ellipsis">食物的列表</h4>
-                            <ul class="shop_detail_ul">
-                                <li class="supports">
-                                    快
-                                </li>
-                                <li class="supports">
-                                    准
-                                </li>
-                            </ul>
-                        </section>
-                        <!-- 评分和月售单数 -->
-                        <section class="shop_rating_order">
-                            <section class="shop_rating_order_left">
-                                <Star  :size="24"></Star>
-                                <div class="rating_section">
-                                    4.1
-                                </div>
-                                <div class="order_section">
-                                    月售106单
-                                </div>
-                            </section>
-                            <section class="shop_rating_order_right">
-                                <span class="delivery_style delivery_right">美团外送</span>
-                            </section>
-                        </section>
-                        <!-- 配送费约¥3和配送起步价格 -->
-                        <section class="shop_distance">
-                            <p class="shop_delivery_msg">
-                                <span>¥20起送</span>
-                                <span class="segmentation">/</span>
-                                <span>配送费约¥3</span>
+                                <span>配送费约¥{{shop.float_delivery_fee}}</span>
                             </p>
                         </section>
                     </div>
                 </a>
             </li>
         </ul>
+        <ul v-else>
+          <li v-for="items in 6" :key="items">
+            <img src="./images/shop_back.svg" alt="abck">
+          </li>
+        </ul>
     </div>
 </template>
 
 <script>
-export default {
-
+import {mapState} from 'vuex'
+import Star from '../Star/Star.vue'
+export default { 
+    data(){
+        return {
+            baseImgUrl: "https://raw.githubusercontent.com/W-Qing/Vue-MintShop/master/mintshop-client/src/components/ShopList/images/"
+        }
+    },
+    computed:{
+        ...mapState(['shops'])
+    },
+    components:{
+      Star
+    }
+   
 }
 </script>
 
