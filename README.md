@@ -12,7 +12,7 @@
 
 ----
 
-​	之前花时间在Vue文档把 `Vue基础` + `Vue Cli` 看了一遍，再加上自己敲一些上面的案例，然而还是不太理解Vue的用法。所以在git上找一个硅谷外卖的项目，拿过来练练手。通过这次练习，我基本会使用了Vue全家桶(Api用的少)，在期间学习的时候，我大致了解了webpack，学习了mint-ui库以及better-scroll库。
+之前花时间在Vue文档把 `Vue基础` + `Vue Cli` 看了一遍，再加上自己敲一些上面的案例，然而还是不太理解Vue的用法。所以在git上找一个硅谷外卖的项目，拿过来练练手。通过这次练习，我基本会使用了Vue全家桶(Api用的少)，在期间学习的时候，我大致了解了webpack，学习了mint-ui库以及better-scroll库。
 
 
 
@@ -20,7 +20,7 @@
 
 ---
 
-**Vue + Vue-router + Vue CLI + Vuex + axios + flex **
+**Vue + Vue-router + Vue CLI + Vuex + axios + flex**
 
 
 
@@ -54,7 +54,6 @@ npm run build
 <font size=1>
 
 ```│  .editorconfig
-<font size=1>
 │  .gitignore
 │  babel.config.js
 │  package-lock.json
@@ -69,14 +68,14 @@ npm run build
 │  │  reset.css				//初始化CSS
 │  │  robots.txt
 │  │  
-│  └─img					//一些初始化vue图标
+│  └─img				//一些初始化vue图标
 │      └─icons
 │              android-chrome-192x192.png
 │              
 └─src
     │  App.vue				//入口
     │  main.js				//入口js
-    ├─api					//ajax
+    ├─api				//ajax
     │      ajax.js
     │      index.js
     ├─common				//一些通用样式和资源
@@ -86,7 +85,7 @@ npm run build
     │  │      loading.gif
     │  └─stylus
     │          mixins.styl
-    ├─components		//组件
+    ├─components			//组件
     │  ├─AlertTip
     │  │      AlertTip.vue  
     │  ├─CartControl
@@ -158,7 +157,7 @@ npm run build
             index.js
             mutation-types.js
             mutations.js
-            state.js   <font>
+            state.js   
 ```
 
  <font>
@@ -169,7 +168,7 @@ npm run build
 
 #### 1.跨域问题
 
-​	可以使用Vue CLI的一个配置文件vue.config.js来配置跨域问题，其中有一个devServer.proxy可以解决前端和后端API服务器没有运行在同一个主机上的问题
+可以使用Vue CLI的一个配置文件vue.config.js来配置跨域问题，其中有一个devServer.proxy可以解决前端和后端API服务器没有运行在同一个主机上的问题
 
 ```
   proxy: {
@@ -187,11 +186,11 @@ npm run build
 
 #### 2.路由懒加载和图片懒加载
 
-​	当打包构建应用时，JavaScript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了
+当打包构建应用时，JavaScript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了
 
-```const Home =() => import('../pages/Home/Home.vue')```
+​	```	const Home =() => import('../pages/Home/Home.vue')```
 
-​	当访问一个页面的时候，先把img元素或是其他元素的背景图片路径替换成一张大小为固定图片的路径（这样就只需请求一次），只有当图片出现在浏览器的可视区域内时，才设置图片正真的路径，让图片显示出来。这就是图片懒加载。不仅可以减轻服务器的压力，而且可以让加载好的页面更快地呈现在用户面前（用户体验好）。
+当访问一个页面的时候，先把img元素或是其他元素的背景图片路径替换成一张大小为固定图片的路径（这样就只需请求一次），只有当图片出现在浏览器的可视区域内时，才设置图片正真的路径，让图片显示出来。这就是图片懒加载。不仅可以减轻服务器的压力，而且可以让加载好的页面更快地呈现在用户面前（用户体验好）。
 
 ```
 # 首先引入
@@ -240,7 +239,7 @@ plugins:[
 
 为了更加直观，我们再来看一张图：
 
-![滚动原理](D:\Vue_Stack\Takeaway-platform\public\img\1.png)
+![滚动原理](D:\Takeaway-platform\public\img\1.png)
 
 ```
 # 这是它的html结构
