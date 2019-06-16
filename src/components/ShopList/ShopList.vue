@@ -5,7 +5,7 @@
             <li class="shop_li border-1px" v-for="(shop,index) in shops" :key="index" @click="$router.push('/shop')">
                 <a>
                     <div class="shop_left">
-                        <img class="shop_img" :src="baseImgUrl+shop.image_path">
+                        <img class="shop_img" :src="baseImgUrl+shop.image_path" v-lazy="baseImgUrl+shop.image_path">
                     </div>
                     <div class="shop_right">
                         <!-- 食物的名字和标签 -->
