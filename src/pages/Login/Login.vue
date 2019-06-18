@@ -33,11 +33,11 @@
                     <div :class="{on: !loginWay}">
                         <section>
                             <section class="login_message">
-                                <input type="text" maxlength="11" placeholder="手机/邮箱/用户名"  v-model="name">
+                                <input type="text" maxlength="11" placeholder="手机/邮箱/用户名/abc"  v-model="name">
                             </section>
                             <section class="login_verification">
-                                <input type="text" maxlength="8" placeholder="密码" v-if="showPwd" v-model="pwd" >
-                                <input type="password" maxlength="8" placeholder="密码"  v-else v-model="pwd">
+                                <input type="text" maxlength="8" placeholder="密码/123" v-if="showPwd" v-model="pwd" >
+                                <input type="password" maxlength="8" placeholder="密码/123"  v-else v-model="pwd">
                                 <div class="switch_button off" :class="showPwd?'on':'off'"  @click="showPwd=!showPwd">
                                     <div class="switch_circle" :class="{right: showPwd}"></div>
                                     <span class="switch_text">{{showPwd ? 'on' : 'off'}}</span>
